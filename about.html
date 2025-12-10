@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Simmifitness Studio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fffbea;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* NAVBAR HOME ICON */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 40px;
+  background-color: #fffbea;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+.navbar a {
+  text-decoration: none;
+  color: #ff69b4;
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+.navbar a:hover { transform: scale(1.2); }
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 150px 20px 50px 20px;
+}
+.header img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ff69b4;
+  box-shadow: 0 8px 20px rgba(255,105,180,0.3);
+  margin-bottom: 20px;
+  transition: transform 0.5s;
+}
+.header img:hover { transform: scale(1.05) rotate(5deg); }
+.header h1 { color: #ff69b4; font-size: 2.8rem; margin-bottom: 10px; }
+.header p { color: #b03060; font-size: 1.2rem; margin-top: 0; }
+
+/* INFO CARDS */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: linear-gradient(145deg, #ffe4ec, #fff5f8);
+  border-radius: 25px;
+  padding: 25px 20px;
+  box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+.info-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.info-card i {
+  font-size: 2.5rem;
+  color: #ff1493;
+  min-width: 40px;
+  margin-top: 5px;
+  transition: transform 0.3s;
+}
+.info-card i:hover { transform: scale(1.2); }
+.info-card h3 { margin: 0 0 8px 0; color: #ff69b4; font-size: 1.5rem; }
+.info-card p { margin: 0; color: #b03060; font-size: 1rem; line-height: 1.5; }
+
+/* SCROLL SPARKLE EFFECT */
+@keyframes sparkle {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(-10px); opacity: 1; }
+}
+.sparkle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #ff69b4;
+  border-radius: 50%;
+  animation: sparkle 2s infinite;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .info-card { flex-direction: column; align-items: center; text-align: center; }
+  .info-card i { margin: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <a href="index.html"><i class="fa fa-home"></i></a>
+</div>
+
+<!-- HEADER WITH PHOTO -->
+<div class="header">
+  <img src="simmi.jpg" alt="Simmi, Founder">
+  <h1>Simmi</h1>
+  <p>Empowering Women Through Yoga 💖</p>
+</div>
+
+<!-- INFO CARDS -->
+<div class="container">
+  <div class="info-card scroll-reveal">
+    <i class="fa fa-calendar"></i>
+    <div>
+      <h3>3 Glorious Years of Yoga Magic</h3>
+      <p>For over 9 amazing years, <strong>Simmifitness Studio</strong> has been empowering women with yoga in a fun, safe, and uplifting environment! 🌸</p>
+    </div>
+  </div>
+
+  <div class="info-card scroll-reveal">
+    <i class="fa fa-users"></i>
+    <div>
+      <h3>80+ Happy, Strong Women</h3>
+      <p>From beginners to pros, over 80 incredible women have transformed their mind, body, and soul here. ✨</p>
+    </div>
+  </div>
+
+  <div class="info-card scroll-reveal">
+    <i class="fa fa-shield-alt"></i>
+    <div>
+      <h3>Safe & Exclusive Women’s Sanctuary</h3>
+      <p>Our studio is a women-only paradise—where you feel secure, supported, and celebrated every step of your yoga journey. 💕</p>
+    </div>
+  </div>
+
+  <div class="info-card scroll-reveal">
+    <i class="fa fa-apple-alt"></i>
+    <div>
+      <h3>Healthy Lifestyle Like a Boss</h3>
+      <p>We don’t just teach yoga! Students share photos of meals, get nutrition tips, and track routines to glow inside & out. 🌟</p>
+    </div>
+  </div>
+
+  <div class="info-card scroll-reveal">
+    <i class="fa fa-weight"></i>
+    <div>
+      <h3>Track, Grow & Shine</h3>
+      <p>Regular weight checks, progress tracking, and personalized attention ensure YOU reach your wellness goals with confidence! 💪</p>
+    </div>
+  </div>
+
+  <div class="info-card scroll-reveal">
+    <i class="fa fa-heart"></i>
+    <div>
+      <h3>Care, Love & Fun Yoga</h3>
+      <p>Yoga here is more than poses—it’s laughter, support, joy, and a sisterhood of amazing women cheering you on! 🌸</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// Scroll reveal animation
+const cards = document.querySelectorAll('.scroll-reveal');
+window.addEventListener('scroll', () => {
+  const triggerBottom = window.innerHeight * 0.85;
+  cards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+    if (cardTop < triggerBottom) card.classList.add('visible');
+  });
+});
+window.addEventListener('load', () => {
+  cards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+    if (cardTop < window.innerHeight) card.classList.add('visible');
+  });
+});
+</script>
+<footer style="
+  background-color: #FEFACB;
+  color: #4b5c09;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+  border-top: 2px solid #e4e1d0;
+">
+  <h3 style="margin: 0; font-size: 1.6rem; letter-spacing: 1px;">Simmifitness Yoga Studio</h3>
+  <p style="margin: 8px 0; font-size: 1rem;">Empowering Every Woman to Feel Strong, Calm, and Confident 💪🌸</p>
+  
+  <div style="margin-top: 15px;">
+    <a href="https://www.instagram.com/simmifitness_111?igsh=eWE5NHgzc2ljb3l3"
+       target="_blank"
+       style="color: #4b5c09; text-decoration: none; margin: 0 10px; font-weight: 500;">
+       Follow us on Instagram
+    </a>
+    <span>|</span>
+    <a href="tel:+919820556962"
+       style="color: #4b5c09; text-decoration: none; margin: 0 10px; font-weight: 500;">
+       Call: +91 98205 56962
+    </a>
+  </div>
+
+  <p style="margin-top: 20px; font-size: 0.9rem; color: #6b6b6b;">
+    © 2025 Simmifitness Yoga Studio. A safe space where women grow, glow, and flow ✨
+  </p>
+</footer>
+</body>
+</html>
